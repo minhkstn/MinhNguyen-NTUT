@@ -106,7 +106,7 @@ def find_adversary_noise(image_path, cls_target, noise_limit=3.0,
 
         # calculate the step-size for updating the image-noise
         # this step-size was found to give fast convergence
-        step_size = 100 / grad_absmax
+        step_size = 7 / grad_absmax
 
         # print the score etc. for the source - class
         msg = "Source score: {0:>7.2%}, class- number: {1:>4}, class-name: {2}"
@@ -218,7 +218,7 @@ def adversarial_example(image_path, cls_target,
 # image_path = "images/elon_musk.jpg"
 image_path = "data/my_images/motor/motor2.jpg"
 adversarial_example(image_path=image_path,
-                    cls_target=300,
+                    cls_target=200,
                     noise_limit=3.0,
-                    required_score=0.999)
+                    required_score=0.99)
 
